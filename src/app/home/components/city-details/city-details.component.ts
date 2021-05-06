@@ -18,9 +18,6 @@ export class CityDetailsComponent implements OnInit {
   
   }
 
-  ionInViewEnter(){
-    this.name = ""
-  }
   
   onClick() {
       this.selectCity.emit(this.id);
