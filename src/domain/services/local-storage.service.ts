@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 import { CityHistory } from '../entities/history';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
   private _storage: Storage | null = null;
@@ -23,15 +23,15 @@ export class StorageService {
   }
 
   public clearAll() {
-     this.storage.clear();
+    this.storage.clear();
   }
 
-  public async getAll(): Promise<any>{
-    const history:CityHistory[] = []
+  public async getAll(): Promise<any> {
+    const history: CityHistory[] = [];
     this.storage.forEach((key, value) => {
-     const obj:CityHistory = {id: value, name: key}
-      history.push(obj)
+      const obj: CityHistory = { id: value, name: key };
+      history.push(obj);
     });
-    return history
+    return history;
   }
 }

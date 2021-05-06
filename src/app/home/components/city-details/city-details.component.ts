@@ -12,15 +12,12 @@ export class CityDetailsComponent implements OnInit {
   @Input() state: string;
   @Output() selectCity: EventEmitter<string> = new EventEmitter();
 
-  constructor(private readonly storageService: StorageService,) {}
-  
-  ngOnInit() {
-  
-  }
+  constructor(private readonly storageService: StorageService) {}
 
-  
+  ngOnInit() {}
+
   onClick() {
-      this.selectCity.emit(this.id);
-      this.storageService.set(this.id, this.name)
+    this.selectCity.emit(this.id);
+    this.storageService.set(this.id, this.name);
   }
 }
