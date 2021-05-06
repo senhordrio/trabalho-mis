@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
+import { CityHistoryQuerysComponent } from './components/city-history-querys/city-history-querys.component';
 import { SharedModule } from '../shared/modules/shared/shared.module';
 
 @NgModule({
@@ -16,6 +17,6 @@ import { SharedModule } from '../shared/modules/shared/shared.module';
     HomePageRoutingModule,
     SharedModule,
   ],
-  declarations: [HomePage, CityDetailsComponent],
+  declarations: [HomePage, CityDetailsComponent, CityHistoryQuerysComponent],
 })
 export class HomePageModule {}

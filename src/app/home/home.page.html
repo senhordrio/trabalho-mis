@@ -27,6 +27,24 @@
             (selectCity)="onSelectCity($event)"
           ></app-city-details>
         </ion-list>
+        <ion-row class="ion-text-center">
+          <ion-col>
+            <ion-text color="medium">
+              <h6>Últimas consultas</h6>
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-button color="light" (click)="onClick()">Limpar</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-list lines="none" *ngIf="!hasError">
+          <app-history-querys
+            *ngFor="let history of histories"
+            id="{{history.id}}"
+            name="{{history.name}}"
+            (selectCity)="onSelectCity($event)"
+          ></app-history-querys>
+        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>

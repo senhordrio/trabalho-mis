@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { StorageService } from 'src/domain/services/local-storage.service';
 
 @Component({
   selector: 'app-city-details',
@@ -11,11 +12,18 @@ export class CityDetailsComponent implements OnInit {
   @Input() state: string;
   @Output() selectCity: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
+  constructor(private readonly storageService: StorageService,) {}
+  
+  ngOnInit() {
+  
+  }
 
-  ngOnInit() {}
-
+  ionInViewEnter(){
+    this.name = ""
+  }
+  
   onClick() {
-    this.selectCity.emit(this.id);
+      this.selectCity.emit(this.id);
+      this.storageService.set(this.id, this.name)
   }
 }
